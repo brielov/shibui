@@ -3,10 +3,10 @@
 Shibui is a quiet, keyboard-first graphical file manager designed to feel
 native to Omarchy and Hyprland.
 
-> **Status:** Shibui is a working replacement candidate. Automated local,
-> interaction, archive, network-failure, and large-directory checks pass. The
-> remaining release gate is hands-on verification with physical removable
-> media and a latency-injected network share.
+> **Status:** Shibui is an early public release and a working replacement
+> candidate. Automated local, interaction, archive, network-failure, and
+> large-directory checks pass. Physical removable media and a latency-injected
+> network share remain hands-on verification gaps.
 
 The current build covers ordinary local, removable-device, and GVfs network
 work: keyboard-driven navigation and selection, safe file operations and undo,
