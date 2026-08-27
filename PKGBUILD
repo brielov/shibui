@@ -1,7 +1,7 @@
 # Maintainer: Gabriel Vaquer <brielov@icloud.com>
 
 pkgname=shibui
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc='Quiet, keyboard-first graphical file manager for Omarchy and Hyprland'
 arch=('x86_64')
@@ -35,7 +35,7 @@ optdepends=(
 )
 options=('!debug')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('97031f52aece23bafdc6a215d4a58f486a4cb4af958eef145826587c0af14d48')
+sha256sums=('995258f7b3fc2559f77fc559c78988d3f35f6e00f10b64c94a219c0b8e420f55')
 
 build() {
   mkdir -p build
