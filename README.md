@@ -35,6 +35,22 @@ clear error in the interface.
 
 ## Build and run
 
+### Arch Linux and Omarchy
+
+Install the latest packaged release directly from this repository:
+
+```sh
+git clone https://github.com/brielov/shibui.git
+cd shibui
+makepkg -si
+```
+
+The package keeps network backends, removable-device actions, archive support,
+PDF previews, and terminal integration optional. `makepkg` lists the available
+optional dependencies after installation.
+
+### From source
+
 ```sh
 mkdir -p build
 cd build
