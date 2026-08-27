@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     startupTimer.start();
 
     QCoreApplication::setApplicationName(QStringLiteral("Shibui"));
-    QCoreApplication::setApplicationVersion(QStringLiteral("0.1.0"));
+    QCoreApplication::setApplicationVersion(QStringLiteral("0.1.1"));
     QCoreApplication::setOrganizationName(QStringLiteral("Shibui"));
     QGuiApplication::setDesktopFileName(QStringLiteral("shibui"));
 

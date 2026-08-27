@@ -135,6 +135,25 @@ void CoreTest::initTestCase()
     QVERIFY(m_testDataDirectory->isValid());
     qputenv("XDG_DATA_HOME", m_testDataDirectory->path().toUtf8());
     qputenv("XDG_CONFIG_HOME", m_testDataDirectory->path().toUtf8());
+
+    const QString applicationsDirectory = QDir(m_testDataDirectory->path())
+                                              .filePath(QStringLiteral("applications"));
+    QVERIFY(QDir().mkpath(applicationsDirectory));
+    writeFile(QDir(applicationsDirectory).filePath(QStringLiteral("shibui-test.desktop")), R"(
+[Desktop Entry]
+Type=Application
+Name=Shibui Test Viewer
+Exec=/usr/bin/true %f
+MimeType=text/plain;
+NoDisplay=true
+)");
+    writeFile(QDir(m_testDataDirectory->path()).filePath(QStringLiteral("mimeapps.list")), R"(
+[Default Applications]
+text/plain=shibui-test.desktop;
+
+[Added Associations]
+text/plain=shibui-test.desktop;
+)");
 }
 
 void CoreTest::loadsThemeTokensAndWatchesChanges()
@@ -1110,8 +1129,9 @@ void CoreTest::listsCompatibleApplications()
     QVERIFY(model.active());
     QTRY_VERIFY_WITH_TIMEOUT(!model.loading(), 3000);
     QVERIFY2(model.rowCount() > 0, qPrintable(model.errorMessage()));
-    QVERIFY(model.data(model.index(0), OpenWithModel::NameRole).toString().size() > 0);
-    QVERIFY(model.desktopIdAt(0).endsWith(QStringLiteral(".desktop")));
+    QCOMPARE(model.data(model.index(0), OpenWithModel::NameRole).toString(),
+             QStringLiteral("Shibui Test Viewer"));
+    QCOMPARE(model.desktopIdAt(0), QStringLiteral("shibui-test.desktop"));
     model.close();
     QVERIFY(!model.active());
 }
