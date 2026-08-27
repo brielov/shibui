@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Main.qml</file>
+        <file>qml/components/BreadcrumbBar.qml</file>
+        <file>qml/components/FileRow.qml</file>
+        <file>qml/components/FileGridItem.qml</file>
+        <file>qml/components/HelpOverlay.qml</file>
+    </qresource>
+</RCC>

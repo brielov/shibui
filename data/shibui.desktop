@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Shibui
+GenericName=File Manager
+Comment=Fast keyboard-first file manager for Omarchy
+Exec=shibui %U
+Icon=shibui
+Terminal=false
+StartupNotify=true
+StartupWMClass=shibui
+Categories=System;FileTools;FileManager;
+MimeType=inode/directory;x-scheme-handler/smb;x-scheme-handler/sftp;x-scheme-handler/dav;x-scheme-handler/davs;x-scheme-handler/nfs;
+Keywords=files;folders;filesystem;explorer;

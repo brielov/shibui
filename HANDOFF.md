@@ -40,7 +40,7 @@ The product should be calm, direct, and trustworthy:
    Slow disks, large directories, thumbnail work, and application bugs must not
    threaten the bar, notifications, or lock screen.
 
-## Proposed v0.1
+## Original v0.1 proposal
 
 - One window and one file pane.
 - Breadcrumb path and a small Places sidebar.
@@ -197,6 +197,15 @@ packaging, and distribution work can wait until the local application is useful.
 
 ## Repository state
 
-This repository intentionally contains only the product handoff and README. The
-next task is the first vertical slice above. Before adding dependencies, confirm
-that Qt does not already provide the required capability.
+Shibui is now a working replacement candidate rather than the initial design-only
+repository described above. [BACKLOG.md](BACKLOG.md) is the authoritative record:
+the implementation milestones through devices, network shares, archives, and
+desktop integration are complete, as are Recent, bulk rename, Templates, and
+new-folder-with-selection. The automated suite currently passes 30 tests, and a
+live SFTP round-trip plus mid-transfer disconnect rollback has been exercised in
+the running Hyprland session.
+
+The remaining replacement-verification gate is deliberately external: test a
+physical removable device and a latency-injected network share. Conditional
+Tree list, Starred, and content-search ideas remain unstarted because no concrete
+need has justified them.
